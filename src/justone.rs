@@ -55,6 +55,7 @@ pub enum ClientMessage {
     WordGuessResponse(usize, String),
     AcceptGuessResponse(usize, bool),
     StopGame,
+    Ping,
 }
 
 #[derive(Debug)]

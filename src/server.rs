@@ -55,6 +55,7 @@ enum ClientMessage {
         accept: bool,
     },
     StartGame,
+    Ping,
 }
 
 struct ServerState {
@@ -514,6 +515,8 @@ async fn new_ws_connection(
                             .unwrap()
                             .send(m)
                             .unwrap_or_else(|e| info!("Error sending {:?} to server: {}", msg, e));
+                    }
+                    ClientMessage::Ping => {
                     }
                     _ => error!(
                         "Message received but there is no client id: {:?}",

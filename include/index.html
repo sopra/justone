@@ -768,6 +768,18 @@
 
             console.log(JSON.stringify(msg))
             ws.send(JSON.stringify(msg));
+
+            setInterval(function () {
+                var msg = {
+                    type: "Ping",
+                    name: name_text.value,
+                    password: password_text.value,
+                    game_id: game_id_text.value,
+                };
+
+                console.log(JSON.stringify(msg));
+                ws.send(JSON.stringify(msg));
+            }, 30000);
         };
 
         new_game_send.onclick = function () {
@@ -783,6 +795,15 @@
             console.log(JSON.stringify(msg))
             ws.send(JSON.stringify(msg));
         };
+
+        setInterval(function () {
+            var msg = {
+                type: "Ping",
+            };
+
+            console.log(JSON.stringify(msg));
+            ws.send(JSON.stringify(msg));
+        }, 30000);
     </script>
 
     <div>
