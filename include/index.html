@@ -783,6 +783,15 @@
             console.log(JSON.stringify(msg))
             ws.send(JSON.stringify(msg));
         };
+
+        setInterval(function () {
+            var msg = {
+                type: "Ping",
+            };
+
+            console.log(JSON.stringify(msg));
+            ws.send(JSON.stringify(msg));
+        }, 30000);
     </script>
 
     <div>
