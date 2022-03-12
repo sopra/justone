@@ -12,4 +12,4 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./include /app/include
 COPY --from=build /root/target/release/justone /app/justone
-CMD [ "/app/justone" ]
+CMD [ "/app/justone",  "--port", "${PORT}"]
